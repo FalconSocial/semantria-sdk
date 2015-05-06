@@ -3,3 +3,7 @@ from __future__ import unicode_literals
 
 class SemantriaError(Exception):
     pass
+
+
+class DocumentLengthExceededEror(SemantriaError):
+	pass

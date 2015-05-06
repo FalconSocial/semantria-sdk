@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import json
-from semantria.error import SemantriaError
+from semantria.error import DocumentLengthExceededEror, SemantriaError
 
 class JsonSerializer:
     def gettype(self):
@@ -26,7 +26,10 @@ class JsonSerializer:
             del obj["cloned"]
 
         #encoder = json.JSONEncoder()
-        return json.dumps(obj)
+        result = json.dumps(obj)
+        if len(result) >= 8192:
+            raise DocumentLengthExceededEror('Document length exceeded. Length: {0}'.format(len(result)))
+        return result
 
     def deserialize(self, string, handler=None):
         #decoder = json.JSONDecoder()
