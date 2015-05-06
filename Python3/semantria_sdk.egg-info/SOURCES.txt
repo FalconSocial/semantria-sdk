@@ -9,4 +9,5 @@ semantria/version.py
 semantria_sdk.egg-info/PKG-INFO
 semantria_sdk.egg-info/SOURCES.txt
 semantria_sdk.egg-info/dependency_links.txt
+semantria_sdk.egg-info/pbr.json
 semantria_sdk.egg-info/top_level.txt

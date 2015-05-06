@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 try:
     from httplib import HTTPException
 except ImportError:
-    from httplib2 import HttpLib2Error as HTTPException
+    from http.client import HTTPException
 
 from semantria.authrequest import *
 from semantria.error import SemantriaError

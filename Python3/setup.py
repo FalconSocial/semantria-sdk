@@ -13,8 +13,8 @@ SDK implements all the available Semantria features and demonstrate best practic
 """
 
 setup(
-    name='semantria_sdk',
-    version='3.8.77',
+    name='falcon-semantria-sdk-3',
+    version='3.8.79',
     packages=['semantria'],
     url='https://semantria.com',
     license='GPL v3',
