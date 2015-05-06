@@ -1,5 +1,8 @@
 CHANGELOG
 
+3.8.78
+	- fixed an import issue. The python3 sdk was using (but not importing) the old httplib instead of python3's http.client. It is now both imported and used correctly.
+
 2015-03-10
 	- updated to Python 3. No change in functionality.
 	
