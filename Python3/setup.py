@@ -24,6 +24,6 @@ setup(
     long_description=LONG_DESCRIPTION,
     keywords='semantria sdk text analytics',
     classifiers=[
-        'Programming Language :: Python :: 3'
+        'Falcon :: Private',
     ]
 )
