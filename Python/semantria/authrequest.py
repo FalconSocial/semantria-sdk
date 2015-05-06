@@ -5,7 +5,7 @@ from io import BytesIO
 import gzip
 
 try:
-    import http.client as httplib
+    import http.client
 except ImportError:
     import httplib
 
@@ -53,7 +53,10 @@ class AuthRequest:
         qscheme, qnetloc, qpath, qparams, qquery, qfragment = qparts[:6]
 
         # httplib.HTTPConnection.debuglevel = 1
-        conn = httplib.HTTPSConnection(qnetloc)
+        try:
+            conn = http.client.HTTPSConnection(qnetloc)
+        except NameError:
+            conn = httplib.HTTPSConnection(qnetloc)
         host = '%s?%s' % (qpath, qquery)
 
         conn.request(method, host, postData, headers)
