@@ -14,7 +14,7 @@ SDK implements all the available Semantria features and demonstrate best practic
 
 setup(
     name='falcon-semantria-sdk',
-    version='3.8.79',
+    version='3.8.81',
     packages=['semantria'],
     url='https://semantria.com',
     license='GPL v3',
