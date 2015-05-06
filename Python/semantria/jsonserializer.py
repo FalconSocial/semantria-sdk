@@ -26,9 +26,19 @@ class JsonSerializer:
             del obj["cloned"]
 
         #encoder = json.JSONEncoder()
-        result = json.dumps(obj)
-        if len(result) >= 8192:
-            raise DocumentLengthExceededEror('Document length exceeded. Length: {0}'.format(len(result)))
+        if isinstance(obj, list):
+            result = []
+            for i in obj:
+                seria_i = json.dumps(i)
+                if len(seria_i) >= 8192:
+                    raise DocumentLengthExceededEror('Document length exceeded. Length: {0}'.format(len(result)))
+                result.append(i)
+            result = json.dumps(result)
+        else:
+            result = json.dumps(obj)
+            if len(obj) >= 8192:
+                    raise DocumentLengthExceededEror('Document length exceeded. Length: {0}'.format(len(result)))
+
         return result
 
     def deserialize(self, string, handler=None):
